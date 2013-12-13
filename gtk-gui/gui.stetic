@@ -6,7 +6,7 @@
   </configuration>
   <import>
     <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
-    <widget-library name="../bin/Release/MassDNS.exe" internal="true" />
+    <widget-library name="../bin/Debug/MassDNS.exe" internal="true" />
   </import>
   <widget class="Gtk.Window" id="MainWindow" design-size="500 477">
     <property name="MemberName" />
@@ -108,6 +108,7 @@
                 <child>
                   <widget class="Gtk.Label" id="label3">
                     <property name="MemberName" />
+                    <property name="Visible">False</property>
                     <property name="LabelProp" translatable="yes">IP:</property>
                   </widget>
                   <packing>
@@ -120,6 +121,7 @@
                 <child>
                   <widget class="Gtk.Entry" id="entryIP">
                     <property name="MemberName" />
+                    <property name="Visible">False</property>
                     <property name="CanFocus">True</property>
                     <property name="IsEditable">True</property>
                     <property name="InvisibleChar">●</property>
@@ -189,6 +191,7 @@
                         <property name="HasLabel">True</property>
                         <property name="UseUnderline">True</property>
                         <property name="Group">group1</property>
+                        <signal name="Clicked" handler="radiobuttonDelegationClicked" />
                       </widget>
                       <packing>
                         <property name="Position">0</property>
@@ -206,6 +209,7 @@
                         <property name="HasLabel">True</property>
                         <property name="UseUnderline">True</property>
                         <property name="Group">group1</property>
+                        <signal name="Clicked" handler="radiobuttonDetailsClicked" />
                       </widget>
                       <packing>
                         <property name="Position">1</property>
@@ -233,6 +237,7 @@
                         <property name="HasLabel">True</property>
                         <property name="UseUnderline">True</property>
                         <property name="Group">group1</property>
+                        <signal name="Clicked" handler="radiobuttonCreateClicked" />
                       </widget>
                       <packing>
                         <property name="Position">0</property>
@@ -250,6 +255,7 @@
                         <property name="HasLabel">True</property>
                         <property name="UseUnderline">True</property>
                         <property name="Group">group1</property>
+                        <signal name="Clicked" handler="radiobuttonDeleteClicked" />
                       </widget>
                       <packing>
                         <property name="Position">1</property>
@@ -368,9 +374,18 @@
                   </packing>
                 </child>
                 <child>
-                  <widget class="Gtk.HButtonBox" id="hbuttonbox2">
+                  <widget class="Gtk.HBox" id="hbox1">
                     <property name="MemberName" />
-                    <property name="Size">0</property>
+                    <property name="Spacing">6</property>
+                    <child>
+                      <widget class="Gtk.ProgressBar" id="progressbar1">
+                        <property name="MemberName" />
+                      </widget>
+                      <packing>
+                        <property name="Position">0</property>
+                        <property name="AutoSize">True</property>
+                      </packing>
+                    </child>
                   </widget>
                   <packing>
                     <property name="Position">2</property>

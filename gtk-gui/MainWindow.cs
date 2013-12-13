@@ -32,7 +32,8 @@ public partial class MainWindow
 	private global::Gtk.HBox hbox19;
 	private global::Gtk.Button buttonPark;
 	private global::Gtk.Button buttonClear;
-	private global::Gtk.HButtonBox hbuttonbox2;
+	private global::Gtk.HBox hbox1;
+	private global::Gtk.ProgressBar progressbar1;
 	
 	protected virtual void Build ()
 	{
@@ -288,27 +289,40 @@ public partial class MainWindow
 		w26.Expand = false;
 		w26.Fill = false;
 		// Container child hbox19.Gtk.Box+BoxChild
-		this.hbuttonbox2 = new global::Gtk.HButtonBox ();
-		this.hbuttonbox2.Name = "hbuttonbox2";
-		this.hbox19.Add (this.hbuttonbox2);
-		global::Gtk.Box.BoxChild w27 = ((global::Gtk.Box.BoxChild)(this.hbox19 [this.hbuttonbox2]));
-		w27.Position = 2;
-		this.vbox5.Add (this.hbox19);
-		global::Gtk.Box.BoxChild w28 = ((global::Gtk.Box.BoxChild)(this.vbox5 [this.hbox19]));
+		this.hbox1 = new global::Gtk.HBox ();
+		this.hbox1.Name = "hbox1";
+		this.hbox1.Spacing = 6;
+		// Container child hbox1.Gtk.Box+BoxChild
+		this.progressbar1 = new global::Gtk.ProgressBar ();
+		this.progressbar1.Name = "progressbar1";
+		this.hbox1.Add (this.progressbar1);
+		global::Gtk.Box.BoxChild w27 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.progressbar1]));
+		w27.Position = 0;
+		this.hbox19.Add (this.hbox1);
+		global::Gtk.Box.BoxChild w28 = ((global::Gtk.Box.BoxChild)(this.hbox19 [this.hbox1]));
 		w28.Position = 2;
-		w28.Expand = false;
-		w28.Fill = false;
-		this.vbox1.Add (this.vbox5);
-		global::Gtk.Box.BoxChild w29 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.vbox5]));
+		this.vbox5.Add (this.hbox19);
+		global::Gtk.Box.BoxChild w29 = ((global::Gtk.Box.BoxChild)(this.vbox5 [this.hbox19]));
 		w29.Position = 2;
+		w29.Expand = false;
+		w29.Fill = false;
+		this.vbox1.Add (this.vbox5);
+		global::Gtk.Box.BoxChild w30 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.vbox5]));
+		w30.Position = 2;
 		this.Add (this.vbox1);
 		if ((this.Child != null)) {
 			this.Child.ShowAll ();
 		}
 		this.DefaultWidth = 500;
 		this.DefaultHeight = 477;
+		this.label3.Hide ();
+		this.entryIP.Hide ();
 		this.Show ();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler (this.OnDeleteEvent);
+		this.radiobuttonDelegation.Clicked += new global::System.EventHandler (this.radiobuttonDelegationClicked);
+		this.radiobuttonDetails.Clicked += new global::System.EventHandler (this.radiobuttonDetailsClicked);
+		this.radiobuttonCreate.Clicked += new global::System.EventHandler (this.radiobuttonCreateClicked);
+		this.radiobuttonDelete.Clicked += new global::System.EventHandler (this.radiobuttonDeleteClicked);
 		this.buttonPark.Clicked += new global::System.EventHandler (this.buttonClickedPark);
 		this.buttonClear.Clicked += new global::System.EventHandler (this.buttonClickedClear);
 	}
