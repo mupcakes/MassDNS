@@ -8,7 +8,7 @@
     <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
     <widget-library name="../bin/Debug/MassDNS.exe" internal="true" />
   </import>
-  <widget class="Gtk.Window" id="MainWindow" design-size="500 477">
+  <widget class="Gtk.Window" id="MainWindow" design-size="422 477">
     <property name="MemberName" />
     <property name="Title" translatable="yes">MassDNS</property>
     <property name="WindowPosition">CenterOnParent</property>
@@ -29,7 +29,7 @@
                 <child>
                   <widget class="Gtk.Label" id="label1">
                     <property name="MemberName" />
-                    <property name="LabelProp" translatable="yes">Username:</property>
+                    <property name="LabelProp" translatable="yes">Manage Username:</property>
                   </widget>
                   <packing>
                     <property name="Position">0</property>
@@ -68,7 +68,7 @@
                 <child>
                   <widget class="Gtk.Label" id="label2">
                     <property name="MemberName" />
-                    <property name="LabelProp" translatable="yes">Password:</property>
+                    <property name="LabelProp" translatable="yes">Manage Password:</property>
                   </widget>
                   <packing>
                     <property name="Position">0</property>
@@ -109,7 +109,7 @@
                   <widget class="Gtk.Label" id="label3">
                     <property name="MemberName" />
                     <property name="Visible">False</property>
-                    <property name="LabelProp" translatable="yes">IP:</property>
+                    <property name="LabelProp" translatable="yes">IP: (defaults to loopback)</property>
                   </widget>
                   <packing>
                     <property name="Position">0</property>
@@ -287,7 +287,10 @@
                     <property name="MemberName" />
                     <property name="CanFocus">True</property>
                     <property name="ShowScrollbars">True</property>
-                    <property name="Text" translatable="yes">Input Hostnames on new lines</property>
+                    <property name="Text" translatable="yes">Place hostnames here, one per line ex:
+host.test.net
+host2.test.net</property>
+                    <signal name="PasteClipboard" handler="textviewHostnamesPasteClipboard" />
                   </widget>
                 </child>
               </widget>
@@ -328,6 +331,7 @@
                     <property name="CanFocus">True</property>
                     <property name="ShowScrollbars">True</property>
                     <property name="Editable">False</property>
+                    <property name="CursorVisible">False</property>
                     <property name="Text" translatable="yes" />
                   </widget>
                 </child>

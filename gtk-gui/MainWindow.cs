@@ -58,7 +58,7 @@ public partial class MainWindow
 		// Container child hbox2.Gtk.Box+BoxChild
 		this.label1 = new global::Gtk.Label ();
 		this.label1.Name = "label1";
-		this.label1.LabelProp = global::Mono.Unix.Catalog.GetString ("Username:");
+		this.label1.LabelProp = global::Mono.Unix.Catalog.GetString ("Manage Username:");
 		this.hbox2.Add (this.label1);
 		global::Gtk.Box.BoxChild w1 = ((global::Gtk.Box.BoxChild)(this.hbox2 [this.label1]));
 		w1.Position = 0;
@@ -85,7 +85,7 @@ public partial class MainWindow
 		// Container child hbox3.Gtk.Box+BoxChild
 		this.label2 = new global::Gtk.Label ();
 		this.label2.Name = "label2";
-		this.label2.LabelProp = global::Mono.Unix.Catalog.GetString ("Password:");
+		this.label2.LabelProp = global::Mono.Unix.Catalog.GetString ("Manage Password:");
 		this.hbox3.Add (this.label2);
 		global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(this.hbox3 [this.label2]));
 		w4.Position = 0;
@@ -113,7 +113,7 @@ public partial class MainWindow
 		// Container child hbox4.Gtk.Box+BoxChild
 		this.label3 = new global::Gtk.Label ();
 		this.label3.Name = "label3";
-		this.label3.LabelProp = global::Mono.Unix.Catalog.GetString ("IP:");
+		this.label3.LabelProp = global::Mono.Unix.Catalog.GetString ("IP: (defaults to loopback)");
 		this.hbox4.Add (this.label3);
 		global::Gtk.Box.BoxChild w7 = ((global::Gtk.Box.BoxChild)(this.hbox4 [this.label3]));
 		w7.Position = 0;
@@ -226,7 +226,7 @@ public partial class MainWindow
 		this.GtkScrolledWindow.ShadowType = ((global::Gtk.ShadowType)(1));
 		// Container child GtkScrolledWindow.Gtk.Container+ContainerChild
 		this.textviewHostnames = new global::Gtk.TextView ();
-		this.textviewHostnames.Buffer.Text = "Input Hostnames on new lines";
+		this.textviewHostnames.Buffer.Text = "Place hostnames here, one per line ex:\nhost.test.net\nhost2.test.net";
 		this.textviewHostnames.CanFocus = true;
 		this.textviewHostnames.Name = "textviewHostnames";
 		this.GtkScrolledWindow.Add (this.textviewHostnames);
@@ -258,6 +258,7 @@ public partial class MainWindow
 		this.textviewAPIReturn.CanFocus = true;
 		this.textviewAPIReturn.Name = "textviewAPIReturn";
 		this.textviewAPIReturn.Editable = false;
+		this.textviewAPIReturn.CursorVisible = false;
 		this.GtkScrolledWindow1.Add (this.textviewAPIReturn);
 		this.vbox5.Add (this.GtkScrolledWindow1);
 		global::Gtk.Box.BoxChild w24 = ((global::Gtk.Box.BoxChild)(this.vbox5 [this.GtkScrolledWindow1]));
@@ -313,7 +314,7 @@ public partial class MainWindow
 		if ((this.Child != null)) {
 			this.Child.ShowAll ();
 		}
-		this.DefaultWidth = 500;
+		this.DefaultWidth = 422;
 		this.DefaultHeight = 477;
 		this.label3.Hide ();
 		this.entryIP.Hide ();
@@ -323,6 +324,7 @@ public partial class MainWindow
 		this.radiobuttonDetails.Clicked += new global::System.EventHandler (this.radiobuttonDetailsClicked);
 		this.radiobuttonCreate.Clicked += new global::System.EventHandler (this.radiobuttonCreateClicked);
 		this.radiobuttonDelete.Clicked += new global::System.EventHandler (this.radiobuttonDeleteClicked);
+		this.textviewHostnames.PasteClipboard += new global::System.EventHandler (this.textviewHostnamesPasteClipboard);
 		this.buttonPark.Clicked += new global::System.EventHandler (this.buttonClickedPark);
 		this.buttonClear.Clicked += new global::System.EventHandler (this.buttonClickedClear);
 	}

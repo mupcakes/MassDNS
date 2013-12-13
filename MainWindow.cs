@@ -89,7 +89,9 @@ public partial class MainWindow: Gtk.Window
 		entryIP.Visible = false;
 		label3.Visible = false;
 	}
-
-
+	protected void textviewHostnamesPasteClipboard (object sender, EventArgs e)
+	{
+		textviewHostnames.Buffer.Text = "";
+	}
 	
 }
